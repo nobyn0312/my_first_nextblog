@@ -1,13 +1,17 @@
-import Link from 'next/link'
-import Layout from '../components/Layout'
+import Image from 'next/image'
+import Hero from '../components/Hero'
+import Container from '../components/container'
+import Meta from '../components/Meta'
 
-const IndexPage = () => (
-  <Layout title="Home | Next.js + TypeScript Example">
-    <h1>Hello Next.js 👋</h1>
-    <p>
-      <Link href="/about">About</Link>
-    </p>
-  </Layout>
-)
+export default function Home() {
+  return (
 
-export default IndexPage
+    <Container>
+      {/* <Meta/> */}
+      <Hero title="WORKS"
+      subtitle="MY FIRST MicroCMS"
+      imageOn/>    
+    </Container>
+
+  )
+}
