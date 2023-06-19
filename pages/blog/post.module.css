@@ -1,0 +1,16 @@
+ /* 仮でcssを設置 */
+.post{
+  margin-bottom: 24px ;
+}
+ .post img{
+  max-width:480px;
+ }
+
+ .title{
+  border-bottom: 1px solid #ddd;
+  margin-bottom:16px;
+ }
+
+ .date{
+  margin-bottom: 16px;
+ }

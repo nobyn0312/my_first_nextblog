@@ -50,6 +50,12 @@ h3 {
 span > img {
   transition: 0.2s;
 }
+img{
+  max-width: 100%;
+  box-sizing: border-box;
+  width: auto;
+  height: auto;
+}
 
 /* リセット */
 body,

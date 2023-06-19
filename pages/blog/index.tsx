@@ -6,6 +6,9 @@ import Hero from '../../components/Hero'
 import styles from '../../styles/blog.module.css'
 import Image from 'next/image'
 import eyecatch from 'images/blog.jpg'
+import { TwoColumn, TwoColumnMain, TwoColumnSidebar } from '../../components/two-column'
+import PostBody from '../../components/post-body'
+import Contact from '../../components/contact'
 
 type Blog = {
   id: string
@@ -15,31 +18,40 @@ type Blog = {
 const Home = ({ blog }: { blog: Blog[] }) => {
   return (
     <Container>
-          <div>
-          <Meta
+
+      <Meta
         pageTitle="ブログ"
         pageDesc="About development activities"
-        // pageImg={eyecatch.src}
-        // pageImgW={eyecatch.width}
-        // pageImgH={eyecatch.height}
       />
-            <Hero title="Blog" subtitle="Blog development activities" />
+
+      <Hero title="Blog" subtitle="Blog development activities" />
+      <TwoColumn>
+        <TwoColumnMain>
+          <PostBody>
             <Image
-          src={eyecatch}
-          alt=""
-          layout="responsive"
-          sizes="(min-width:1152px) 1152px,100vw"
-          priority
-          placeholder="blur"
-        />
-        <ul className={styles.blogContainer}>
-          {blog.map((blog) => (
-            <li key={blog.id}>
-              <Link href={`/${blog.id}`}>{blog.title}</Link>
-            </li>
-          ))}
-        </ul>
-      </div>  
+              src={eyecatch}
+              alt=""
+              layout="responsive"
+              sizes="(min-width:480) 780,100vw"
+              priority
+              placeholder="blur"
+            />
+
+            <ul className={styles.blogContainer}>
+              {blog.map((blog) => (
+                <li key={blog.id}>
+                  <Link href={`blog/${blog.id}`}>{blog.title}</Link>
+                </li>
+              ))}
+            </ul>
+          </PostBody>
+        </TwoColumnMain>
+
+        <TwoColumnSidebar>
+          <Contact />
+        </TwoColumnSidebar>
+      </TwoColumn>
+
     </Container>
 
   )
