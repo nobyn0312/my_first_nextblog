@@ -9,6 +9,8 @@ import Meta from "../../components/Meta";
 import { TwoColumn, TwoColumnMain, TwoColumnSidebar } from "../../components/two-column";
 import PostBody from "../../components/post-body";
 import Contact from "../../components/contact";
+import eyecatch from 'images/about.jpg'
+import Hero from "../../components/Hero";
 
 // 取得した記事のアイキャッチ
 type Eyecatch = {
@@ -58,6 +60,18 @@ export default function BlogId({ blog}: { blog: Blog }) {
 
   return (
     <Container>
+            {/* <Hero title={blog.title} subtitle="About development activities" /> */}
+            <h1 className={styles.title}>{blog.title}</h1>
+
+                  <Image
+              src={eyecatch}
+              alt=""
+              layout="responsive"
+              sizes="(min-width:480) 480,100vw"
+              priority
+              placeholder="blur"
+            />
+
       <TwoColumn>
         <TwoColumnMain>
           <PostBody>

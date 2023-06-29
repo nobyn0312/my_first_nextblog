@@ -5,7 +5,7 @@ import Meta from '../../components/Meta'
 import Hero from '../../components/Hero'
 import styles from '../../styles/blog.module.css'
 import Image from 'next/image'
-import eyecatch from 'images/blog.jpg'
+import eyecatch from 'images/blog.png'
 import { TwoColumn, TwoColumnMain, TwoColumnSidebar } from '../../components/two-column'
 import PostBody from '../../components/post-body'
 import Contact from '../../components/contact'
@@ -25,17 +25,18 @@ const Home = ({ blog }: { blog: Blog[] }) => {
       />
 
       <Hero title="Blog" subtitle="Blog development activities" />
-      <TwoColumn>
-        <TwoColumnMain>
-          <PostBody>
-            <Image
+      <Image
               src={eyecatch}
               alt=""
               layout="responsive"
-              sizes="(min-width:480) 780,100vw"
+              sizes="(min-width:480) 480,100vw"
               priority
               placeholder="blur"
             />
+
+      <TwoColumn>
+        <TwoColumnMain>
+          <PostBody>
 
             <ul className={styles.blogContainer}>
               {blog.map((blog) => (
