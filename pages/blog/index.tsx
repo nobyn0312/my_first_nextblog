@@ -10,9 +10,18 @@ import { TwoColumn, TwoColumnMain, TwoColumnSidebar } from '../../components/two
 import PostBody from '../../components/post-body'
 import Contact from '../../components/contact'
 
+
+// 取得した記事のアイキャッチ
+type Eyecatch = {
+  url: string,
+  height: number,
+  width: number
+}
+
 type Blog = {
   id: string
-  title: string
+  title: string,
+    eyecatch: Eyecatch
 }
 
 const Home = ({ blog }: { blog: Blog[] }) => {
@@ -40,7 +49,8 @@ const Home = ({ blog }: { blog: Blog[] }) => {
 
             <ul className={styles.blogContainer}>
               {blog.map((blog) => (
-                <li key={blog.id}>
+                <li  key={blog.id}>
+                  
                   <Link href={`blog/${blog.id}`}>{blog.title}</Link>
                 </li>
               ))}
